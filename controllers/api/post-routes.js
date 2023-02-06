@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
                 }
             }
         ]
-    })
+    })  //could have used async function rather than .then but kept getting error
         .then(dbPostData => res.json(dbPostData))
         .catch(err => {
             console.log(err);
@@ -82,6 +82,7 @@ router.post('/', withAuth, (req, res) => {
 
 // update the title or the content
 router.put('/:id', withAuth, (req, res) => {
+    //able to update all fields using req.body
     Post.update(req.body, {
         individualHooks: true,
         where: {
@@ -102,13 +103,15 @@ router.put('/:id', withAuth, (req, res) => {
         });
 });
 
-// delete a post
+// delete a post by id
 router.delete('/:id', withAuth, (req, res) => {
+    //Looks for id in the request parameter and deletes the instance from the database
     Post.destroy({
         where: {
             id: req.params.id
         }
     })
+    //if not dbPostData is error
         .then(dbPostData => {
             if (!dbPostData) {
                 res.status(404).json({ message: 'No post found with this id' });

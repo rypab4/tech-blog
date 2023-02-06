@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require("../../models");
 
-// get users
+// get all users
 router.get('/', (req, res) => {
     User.findAll({
         attributes: { exclude: ['password'] }
@@ -116,10 +116,9 @@ router.post('/logout', (req, res) => {
     }
 });
 
-//PUT /api/users/1
+//update user 
 router.put('/:id', (req, res) => {
-
-    // if req.body has exact ket/value pairs to match the model, you can just use `req.body` instead
+//Update method on User
     User.update(req.body, {
         //pass in req.body instead to only update what's passed through
         individualHooks: true,
@@ -128,6 +127,7 @@ router.put('/:id', (req, res) => {
         }
     })
         .then(dbUserData => {
+            //if not dbUserData send error
             if (!dbUserData) {
                 res.status(404).json({ message: 'No user found with this id' });
                 return;
@@ -140,7 +140,7 @@ router.put('/:id', (req, res) => {
         })
 });
 
-//DELETE /api/users/1
+//DELETE user
 router.delete('/:id', (req, res) => {
     User.destroy({
         where: {
@@ -148,6 +148,7 @@ router.delete('/:id', (req, res) => {
         }
     })
         .then(dbUserData => {
+            //if not dbUserData send error
             if (!dbUserData) {
                 res.status(404).json({ message: 'No user found with this id' });
                 return;
