@@ -29,8 +29,10 @@ router.get('/', (req, res) => {
         ]
     })
         .then(dbPostData => {
+            console.log(dbPostData)
             const posts = dbPostData.map(post => post.get({ plain: true }))
-            res.render('homepage', { posts, loggedIn: req.session.loggedIn })
+            
+            res.render('all-posts', { posts, loggedIn: req.session.loggedIn })
         })
         .catch(err => {
             console.log(err);
@@ -50,8 +52,13 @@ router.get('/login', (req, res) => {
 });
 
 // create route for the sign up page
-router.get('/signup', (req, res) => {
-    res.render('signup');
+router.get("/signup", (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect("/");
+        return;
+    }
+
+    res.render("signup");
 });
 
 // create a route to get a single post

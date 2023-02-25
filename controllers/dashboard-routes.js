@@ -31,9 +31,10 @@ router.get('/', withAuth, (req, res) => {
         ]
     })
         .then(dbPostData => {
+            console.log(dbPostData)
             //serialize the data before passing to template
             const posts = dbPostData.map(post => post.get({ plain: true }))
-            res.render('dashboard', { posts, loggedIn: true });
+            res.render("all-posts-admin", { posts, loggedIn: true });
         })
         .catch(err => {
             console.log(err);
@@ -79,8 +80,8 @@ router.get('/edit/:id', withAuth, (req, res) => {
 
             // pass data to template
             res.render('edit-post', {
-                post,
-                loggedIn: true
+                layout: "dashboard",
+                post
             })
         })
         .catch(err => {
@@ -90,8 +91,10 @@ router.get('/edit/:id', withAuth, (req, res) => {
 })
 
 // create route for new post page
-router.get('/newpost', withAuth, (req, res) => {
-    res.render('new-post', { loggedIn: true });
-})
+router.get("/new", withAuth, (req, res) => {
+    res.render("new-post", {
+        layout: "dashboard"
+    });
+});
 
 module.exports = router;

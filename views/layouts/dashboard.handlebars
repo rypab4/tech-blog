@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Blog</title>
-   <link href="https://fonts.googleapis.com/css2?family=Amita:wght@700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amita:wght@700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
@@ -13,9 +13,8 @@
     <header class="hero">
         <h1 class="app-title"><a href="/">Tech Blog</a></h1>
         <nav class="navbar">
-        <ul>
+        <ul class="flex-row">
             <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
-            <li class="li-inline nav-item"><a href="/login">Login</a></li>
             <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
         </ul>
     </nav>
@@ -25,10 +24,11 @@
         {{{body}}}
     </main>
 
-    <footer class="flex-row justify-center">
-        &copy;<script>document.write(new Date().getFullYear());</script> 
+    <footer class="footer flex-row justify-center">
+        <a href="/dashboard/new">➕ New Post</a>
     </footer>
 </body>
 
-</html>
 <script src="/javascript/logout.js"></script>
+
+</html>

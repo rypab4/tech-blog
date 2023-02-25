@@ -97,7 +97,7 @@ router.post('/login', (req, res) => {
 
             
 
-            res.redirect('/');
+            // res.redirect('/');  
 
             return res.json({ user: dbUserData, message: 'You are now logged in!' });
         })
@@ -106,6 +106,7 @@ router.post('/login', (req, res) => {
 
 //create a logout route for user
 router.post('/logout', (req, res) => {
+    console.log(req.session)
     if (req.session.loggedIn) {
         req.session.destroy(() => {
             res.status(204).end();
@@ -141,7 +142,7 @@ router.put('/:id', (req, res) => {
 });
 
 //DELETE user
-router.delete('/:id', (req, res) => {
+router.delete('/user/:id', (req, res) => {
     User.destroy({
         where: {
             id: req.params.id
