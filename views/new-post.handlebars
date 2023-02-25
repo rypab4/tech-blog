@@ -1,0 +1,27 @@
+<form id='new-post-form'>
+    <div class="row">
+        <div id='new-post-header' class="col-10">
+            <h2>Create New Post</h2>
+        </div>
+    </div>
+    <div id='new-post-div' class="row border">
+        <div class="col-10">
+            <label for='title-input'>Title</label>
+        </div>
+        <div class="col-10">
+            <input placeholder='Enter title here...' type='text' id='title-input' />
+        </div>
+        <div class="col-10">
+            <label for='post-content-input'>Content</label>
+        </div>
+        <div class="col-10">
+            <textarea id='post-content-input' name='post-content-input' form='new-post-form'
+                placeholder="Enter content here..."></textarea>
+        </div>
+        <div class="col-10">
+            <button type='submit' id='create-new-post'>Create</button>
+        </div>
+    </div>
+</form>
+
+<script src="/javascript/add-post.js"></script>

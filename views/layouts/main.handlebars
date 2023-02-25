@@ -2,33 +2,44 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Blog</title>
-   <link href="https://fonts.googleapis.com/css2?family=Amita:wght@700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
-<body class="flex-column min-100-vh">
-    <header class="hero">
-        <h1 class="app-title"><a href="/">Tech Blog</a></h1>
-        <nav class="navbar">
-        <ul>
-            <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
-            <li class="li-inline nav-item"><a href="/login">Login</a></li>
-            <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
-        </ul>
-    </nav>
+<body>
+    <header>
+        <div class='box'>
+            <nav id='nav-row' class='row'>
+                {{#if loggedIn}}
+                <div class="col-2">
+                    <a id='home-link' href="/">Home</a>
+                </div>
+                <div id='dash-link-div' class="col-3">
+                    <a id='dash-link' href='/dashboard'>Dashboard</a>
+                </div>
+                <div class="col-3">
+                    <button id='logout-link'>Logout</button>
+                </div>
+                {{else}}
+                <a class='col-1' href="/">Home</a>
+                <a class='col-1' href='/login'>Login</a>
+                {{/if}}
+            </nav>
+            <div id='header-title' class='row'>
+                <a href="/">The Tech Blog</a>
+            </div>
+        </div>
     </header>
-    
-    <main class="col-auto">
-        {{{body}}}
+    <main>
+        <div class="box">
+            {{{ body }}}
+        </div>
     </main>
-
-    <footer class="flex-row justify-center">
-        &copy;<script>document.write(new Date().getFullYear());</script> 
-    </footer>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js" defer></script>
+    {{/if}}
 </body>
 
 </html>
-<script src="/javascript/logout.js"></script>

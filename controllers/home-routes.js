@@ -29,9 +29,9 @@ router.get('/', (req, res) => {
         ]
     })
         .then(dbPostData => {
-            console.log(dbPostData)
+            // console.log(dbPostData)
             const posts = dbPostData.map(post => post.get({ plain: true }))
-            
+            // console.log(posts)
             res.render('all-posts', { posts, loggedIn: req.session.loggedIn })
         })
         .catch(err => {
@@ -105,5 +105,7 @@ router.get('/post/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
+
+
 
 module.exports = router;

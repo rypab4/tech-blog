@@ -31,9 +31,9 @@ router.get('/', withAuth, (req, res) => {
         ]
     })
         .then(dbPostData => {
-            console.log(dbPostData)
             //serialize the data before passing to template
             const posts = dbPostData.map(post => post.get({ plain: true }))
+            console.log(posts)
             res.render("all-posts-admin", { posts, loggedIn: true });
         })
         .catch(err => {

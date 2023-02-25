@@ -1,0 +1,30 @@
+<form id='edit-post-form'>
+    <div class='row'>
+        <div id='edit-post-header' class="col-10">
+            <h2>Edit Post</h2>
+        </div>
+    </div>
+    <div id="edit-post-div" class="row border">
+        <div class="col-10">
+            <label for='edit-title-input'>Title</label>
+        </div>
+        <div class="col-10">
+            <input type='text' id='edit-title-input' value='{{post.title}}' />
+        </div>
+        <div class="col-10">
+            <label for='edit-post-content-input'>Content</label>
+        </div>
+        <div class="col-10">
+            <textarea id='edit-post-content-input' name='edit-post-content-input'
+                form='edit-post-form'>{{post.post_content}}</textarea>
+        </div>
+        <div class="col-10">
+            <button type='submit' id='update-post-btn'>Update Post</button>
+        </div>
+        <div class="col-10">
+            <button type='button' id='delete-post-btn'>Delete</button>
+        </div>
+    </div>
+</form>
+<script src="/javascript/edit.js"></script>
+<script src="/javascript/delete-post.js"></script>
