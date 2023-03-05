@@ -1,31 +1,31 @@
 {{#if posts.length }}
 <section>
     <ol>
-        {{#each posts as |post| }}
+        {{#each posts }}
         <li class='row border'>
             <article class='col-10'>
                 <div id='blog-header' class='row'>
                     <div id='blog-title' class='col-1'>
-                        <a href='/dashboard/edit/{{post.id}}'>{{post.title}}</a>
-                    </div>
-                    <div  id='blog-date' class="col-1">
-                        <span>{{format_date post.created_at}}</span>
-                    </div>
+                        <a href='/post/{{id}}'>{{title}}</a>
+                <div class="col-1">
+                    <span>Posted by {{user.username}} on {{format_date created_at}}</span>
+                </div>
+                    <div id='blog-content' class='row'>
+                <div class="col-10">
+                    <p>{{post_content}}</p>
+                </div>
+            </div>
                 </div>
             </article>
         </li>
         {{/each}}
     </ol>
 </section>
+{{#if loggedIn}}
 <div id='post-btn-div' class="row">
     <div class="col-1">
         <a href='/dashboard/newpost'><button type='button' id='post-btn'>+ New Post</button></a>
     </div>
 </div>
-{{else}}
-<div id='post-btn-div' class="row">
-    <div class="col-1">
-        <a href='/dashboard/newpost'><button type='button' id='post-btn'>+ New Post</button></a>
-    </div>
-</div>
+{{/if}}
 {{/if}}

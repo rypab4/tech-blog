@@ -16,13 +16,15 @@
                 <div class="col-2">
                     <a id='home-link' href="/">Home</a>
                 </div>
-                <div id='dash-link-div' class="col-3">
-                    <a id='dash-link' href='/dashboard'>Dashboard</a>
-                </div>
+
                 <div class="col-3">
                     <button id='logout-link'>Logout</button>
+                </div>               
+                 <div id='dash-link-div' class="col-3">
+                    <a id='dash-link' href='/dashboard'>Dashboard</a>
                 </div>
-                {{else}}
+                {{else}}                
+
                 <a class='col-1' href="/">Home</a>
                 <a class='col-1' href='/login'>Login</a>
                 {{/if}}

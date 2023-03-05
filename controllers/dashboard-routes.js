@@ -90,7 +90,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
 })
 
 // create route for new post page
-router.get("/new", withAuth, (req, res) => {
+router.get("/newpost", withAuth, (req, res) => {
     res.render("new-post", {
         layout: "dashboard"
     });
