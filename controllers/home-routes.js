@@ -32,7 +32,7 @@ router.get('/', (req, res) => {
             // console.log(dbPostData)
             const posts = dbPostData.map(post => post.get({ plain: true }))
             // console.log(posts)
-            res.render('dashboard', { posts, loggedIn: req.session.loggedIn })
+            res.render('homepage', { posts, loggedIn: req.session.loggedIn })
         })
         .catch(err => {
             console.log(err);

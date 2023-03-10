@@ -1,30 +1,31 @@
-
 <section>
-    <ol>
-        {{#each posts }}
-        <li class='row border'>
-            <article class='col-10'>
-                <div id='blog-header' class='row'>
-                    <div id='blog-title' class='col-1'>
-                        <a href='/post/{{id}}'>{{title}}</a>
-                <div class="col-1">
-                    <span>Posted by {{user.username}} on {{format_date created_at}}</span>
+    <div class="container dashboard-card">
+        {{#each posts}}
+        <li class="card body row border custom-card">
+            <article class="col-10">
+                <div id="blog-header" class="row">
+                    <div id="blog-title" class="col-5">
+                        <a href="/post/{{id}}">{{title}}</a>
+                    </div>
+                    <div class="col-5">
+                        <span>Posted by {{user.username}} on {{format_date created_at}}</span>
+                    </div>
                 </div>
-                    <div id='blog-content' class='row'>
-                <div class="col-10">
-                    <p>{{post_content}}</p>
-                </div>
-            </div>
+                <div id="blog-content" class="row">
+                    <div class="col-10">
+                        <p>{{post_content}}</p>
+                    </div>
                 </div>
             </article>
         </li>
         {{/each}}
-    </ol>
+    </div>
 </section>
 {{#if loggedIn}}
-<div id='post-btn-div' class="row">
-    <div class="col-1">
-        <a href='/dashboard/newpost'><button type='button' id='post-btn'>+ New Post</button></a>
+<div id="post-btn-div" class="row">
+    <div class="col-5">
+        <a href="/dashboard/newpost"><button type="button" id="post-btn" class="btn btn-sm btn-primary">New Post</button></a>
     </div>
 </div>
 {{/if}}
+
