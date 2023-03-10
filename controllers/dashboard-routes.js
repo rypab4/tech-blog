@@ -41,7 +41,7 @@ router.get('/', withAuth, (req, res) => {
         });
 });
 
-// create route to edit a post
+// create route to edit a post and render edit-post handlebar
 router.get('/edit/:id', withAuth, (req, res) => {
     Post.findOne({
         where: {

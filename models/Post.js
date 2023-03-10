@@ -19,10 +19,7 @@ Post.init(
         post_content: {
             type: DataTypes.TEXT,
             allowNull: false,
-            //has to be more than 10 characters
-            validate: {
-                len: [10]
-            }
+
         },
         user_id: {
             type: DataTypes.INTEGER,

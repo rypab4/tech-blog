@@ -28,7 +28,7 @@ const userdata = [
     }
   ]
   
-
+//sequelize generate SQL inser state ment for each postdata
 const seedUsers = () => User.bulkCreate(userdata, {individualHooks: true});
 
 module.exports = seedUsers;

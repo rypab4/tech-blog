@@ -48,7 +48,7 @@ router.get('/:id', (req, res) => {
         });
 });
 
-//posting api
+//Sign up using post 
 router.post('/signup', (req, res) => {
     User.create({
         username: req.body.username,
@@ -85,7 +85,7 @@ router.post('/login', (req, res) => {
         const validPassword = dbUserData.checkPassword(req.body.password);
 
         if (!validPassword) {
-            res.status(400).json({ message: 'Incorrect password! ' });
+            res.status(400).json({ message: 'Wrong password! ' });
             return;
         }
 
@@ -99,7 +99,7 @@ router.post('/login', (req, res) => {
 
             // res.redirect('/');  
 
-            return res.json({ user: dbUserData, message: 'You are now logged in!' });
+            return res.json({ user: dbUserData, message: 'You are logged in!' });
         })
     });
 });

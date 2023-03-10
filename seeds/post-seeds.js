@@ -19,6 +19,8 @@ const postdata = [
 
 ];
 
+//sequelize generate SQL inser state ment for each postdata
 const seedPosts = () => Post.bulkCreate(postdata);
 
+//export function for othe forms
 module.exports = seedPosts;

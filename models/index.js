@@ -3,12 +3,12 @@ const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 
-//create associations
+//create tieins
 User.hasMany(Post, {
     foreignKey: 'user_id'
 });
 
-//tie in associations
+//tie ins
 Post.belongsTo(User, {
     foreignKey: 'user_id',
 });

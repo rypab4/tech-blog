@@ -4,10 +4,10 @@ async function editFormHandler(event) {
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
-
+    //const for title and post
     const title = document.querySelector('#edit-title-input').value;
     const post_content = document.querySelector('#edit-post-content-input').value;
-
+    //use the edit api 
     const response = await fetch(`/api/posts/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
@@ -24,5 +24,5 @@ async function editFormHandler(event) {
     }
 
 }
-
+//if click on edit submit
 document.querySelector('#edit-post-form').addEventListener('submit', editFormHandler);

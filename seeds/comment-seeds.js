@@ -23,7 +23,7 @@ const commentdata = [
   },
 
 ];
-
+//sequelize generate SQL inser state ment for each commentdata
 const seedComments = () => Comment.bulkCreate(commentdata);
 
 module.exports = seedComments;
