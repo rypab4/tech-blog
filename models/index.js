@@ -1,5 +1,5 @@
 // take in other files to use models
-const User = require('./user');
+const User = require('./usermodel');
 const Post = require('./post');
 const Comment = require('./comment');
 
