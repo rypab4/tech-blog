@@ -1,7 +1,7 @@
 // take in other files to use models
-const User = require('./User');
-const Post = require('./Post');
-const Comment = require('./Comment');
+const User = require('./user');
+const Post = require('./post');
+const Comment = require('./comment');
 
 //create tieins
 User.hasMany(Post, {
