@@ -1,23 +1,23 @@
-<H2>EDIT-POST</H2>
+
 <form id='edit-post-form'>
     <div class='row'>
         <div id='edit-post-header' class="col-10">
             <h2>Edit Post</h2>
         </div>
     </div>
-    <div id="edit-post-div" class="row border">
+    <div id="edit-post-div" class="row border border-secondary  comment-box">
         <div class="col-10">
             <label for='edit-title-input'>Title</label>
         </div>
         <div class="col-10">
-            <input type='text' id='edit-title-input' value='{{post.title}}' />
+            <input type='text' id='edit-title-input'rows="5" class="col-10" value='{{post.title}}' />
         </div>
         <div class="col-10">
             <label for='edit-post-content-input'>Content</label>
         </div>
         <div class="col-10">
             <textarea id='edit-post-content-input' name='edit-post-content-input'
-                form='edit-post-form'>{{post.post_content}}</textarea>
+                form='edit-post-form'rows="5" class="col-10">{{post.post_content}}</textarea>
         </div>
         <div class="col-10">
             <button type='submit' id='update-post-btn'>Update Post</button>

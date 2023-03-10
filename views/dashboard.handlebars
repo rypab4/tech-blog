@@ -1,12 +1,13 @@
 <h1>Your Dashboard</h1>
+{{#if posts.length }}
 <section>
-    <div class="container dashboard-card">
+    <div class=" container dashboard-card">
         {{#each posts}}
-        <li class="card body row border custom-card">
+        <li class="mt-2 card body row border custom-card">
             <article class="col-10">
                 <div id="blog-header" class="row">
                     <div id="blog-title" class="col-5">
-                        <a href="/post/{{id}}">{{title}}</a>
+                        <a href="/dashboard/edit/{{id}}">{{title}}</a>
                     </div>
                     <div class="col-5">
                         <span>Posted by {{user.username}} on {{format_date created_at}}</span>
@@ -22,10 +23,15 @@
         {{/each}}
     </div>
 </section>
-{{#if loggedIn}}
 <div id="post-btn-div" class="row">
     <div class="col-5">
-        <a href="/dashboard/newpost"><button type="button" id="post-btn" class="btn btn-sm btn-primary">New Post</button></a>
+        <a href="/dashboard/newpost"><button type="button" id="post-btn" class="btn btn-sm btn-primary mt-2">New Post</button></a>
+    </div>
+</div>
+{{else}}
+<div id='post-btn-div' class="row">
+    <div class="col-1">
+        <a href='/dashboard/newpost'><button type='button' id='post-btn'>+ New Post</button></a>
     </div>
 </div>
 {{/if}}

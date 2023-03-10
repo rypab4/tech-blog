@@ -1,6 +1,6 @@
-<h2>Comment</h2>
-<ol>
-    <li class='row border'>
+<h2>Add Comment</h2>
+<div>
+    <li class='row border border-secondary comment-box'>
         <article class='col-10'>
             <div id='blog-header' class='row'>
                 <div class='col-10'>
@@ -17,30 +17,35 @@
             </div>
         </article>
     </li>
-</ol>
-<div class='row border'>
-    <div class="col-10">
-        {{#each post.comments}}
-        <section id='comments' class="row">
-            <div class='col-10'>
-                <p>{{comment_text}}</p>
-            </div>
-            <div class='col-10'>
-                <p>-{{user.username}} on {{format_date created_at}}</p>
-            </div>
-        </section>
-        {{/each}}
+</div>
+{{#each post.comments}}
+<div class="mt-2 ">
+    <div class='row border comment-box'>
+        
+        <div class="mt-2 col-10 border-secondary">
+            
+            <li id='comments' class="row ">
+                <div class='col-10'>
+                    <p>{{comment_text}}</p>
+                </div>
+                <div class='col-10'>
+                    <p>{{user.username}} on {{format_date created_at}}</p>
+                </div>
+            </li>
+            
+        </div>
     </div>
 </div>
+{{/each}}
 {{#if loggedIn}}
-<form id='comment-form'>
-    <div id='comment-form-div' class="row border">
+<form class="mt-2" id='comment-form'>
+    <div id='comment-form-div' class="row border comment-box">
         <div class="col-10">
             <label for='new-comment'>Comment</label>
         </div>
         <div class="col-10">
             <textarea placeholder='Enter comment here...' name='new-comment' id='new-comment'
-                form='comment-form'></textarea>
+                form='comment-form' rows="5" class="col-10"></textarea>
         </div>
         <div class="col-10">
             <button id='submit-button' type='submit'>Submit</button>

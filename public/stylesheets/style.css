@@ -1,64 +1,79 @@
 body {
-    background-color: #A3C1AD;
+  background-color: #A3C1AD;
 }
 
 
 /* Verdigris */
 .navbar {
-    background-color: #68B0AB;
+  background-color: #68B0AB;
 }
 
 /* White color for links */
 .navbar a {
-    color: #fff;
+  color: #fff;
 }
-.navbar-brand{
-  font-size:2rem;
+
+.navbar-brand {
+  font-size: 2rem;
 }
 
 #login-form {
-    background-color: #C8D5B9; /* tea-green color */
-  }
-  
-  #login-header h2 {
-    color: #333; /* black text color */
-  }
-  
-  #login-div label {
-    color: #333; /* black label text color */
-  }
-  
-  #login-div input {
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: #FFF; /* white background color for input fields */
-    color: #333; /* black text color for input fields */
-  }
-  
-  #login-btn {
-    background-color: #333; /* black button background color */
-    color: #FFF; /* white button text color */
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  #login-btn:hover {
-    background-color: #FFF; /* white button background color on hover */
-    color: #333; /* black button text color on hover */
-  }
-  .custom-card {
-    height: 200px;
-    font-size: 1.5rem;
-    background-color: #faf3dd;
+  background-color: #C8D5B9;
+  /* tea-green color */
 }
 
-#new-post-div{
+#login-header h2 {
+  color: #333;
+  /* black text color */
+}
+
+#login-div label {
+  color: #333;
+  /* black label text color */
+}
+
+#login-div input {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #FFF;
+  /* white background color for input fields */
+  color: #333;
+  /* black text color for input fields */
+}
+
+#login-btn {
+  background-color: #333;
+  /* black button background color */
+  color: #FFF;
+  /* white button text color */
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#login-btn:hover {
+  background-color: #FFF;
+  /* white button background color on hover */
+  color: #333;
+  /* black button text color on hover */
+}
+
+.custom-card {
+  height: 150px;
+  font-size: 1.5rem;
   background-color: #faf3dd;
 }
 
-.homepage-card{
+#new-post-div {
+  background-color: #faf3dd;
+}
+
+.homepage-card {
+  background-color: #faf3dd;
+}
+
+.comment-box {
   background-color: #faf3dd;
 }
