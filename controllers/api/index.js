@@ -2,9 +2,9 @@
 
 const router = require('express').Router();
 
-const userRoutes = require('./user-routes');
-const postRoutes = require('./post-routes');
-const commentRoutes = require('./comment-routes');
+const userRoutes = require('./userroutes');
+const postRoutes = require('./postroutes');
+const commentRoutes = require('./commentroutes');
 
 //all the following url will be /api/..
 router.use('/user', userRoutes);

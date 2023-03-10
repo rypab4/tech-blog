@@ -14,11 +14,19 @@ Post.init(
         },
         title: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                //  title must be at least four characters
+                len: [1]
+            }
         },
         post_content: {
             type: DataTypes.TEXT,
             allowNull: false,
+            validate: {
+                //  post must have at least length of 4 characters
+                len: [1]
+            }
 
         },
         user_id: {

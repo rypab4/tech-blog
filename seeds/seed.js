@@ -1,6 +1,6 @@
-const seedUsers = require('./user-seeds');
-const seedPosts = require('./post-seeds');
-const seedComments = require('./comment-seeds');
+const seedUsers = require('./userseeds');
+const seedPosts = require('./postseeds');
+const seedComments = require('./commentseeds');
 
 const sequelize = require('../config/connection');
 //create console logs to separate when sequelized seeds to see errors easily
