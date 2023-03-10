@@ -79,7 +79,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
 
             // pass data to template
             res.render('edit-post', {
-                layout: "dashboard",
+                loggedIn: true ,
                 post
             })
         })
@@ -91,8 +91,8 @@ router.get('/edit/:id', withAuth, (req, res) => {
 
 // create route for new post page
 router.get("/newpost", withAuth, (req, res) => {
-    res.render("new-post", {
-        layout: "dashboard"
+    res.render("newpost", {
+        loggedIn: true 
     });
 });
 
