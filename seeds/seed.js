@@ -6,15 +6,15 @@ const sequelize = require('../config/connection');
 //create console logs to separate when sequelized seeds to see errors easily
 const seedAll = async () => {
   await sequelize.sync({ force: true });
-  console.log('--------------');
+  console.log('-------DATABASE SYNCED-------');
   await seedUsers();
-  console.log('--------------');
+  console.log('-------USER SEEDED-------');
 
   await seedPosts();
-  console.log('--------------');
+  console.log('------POST SEEDED--------');
 
   await seedComments();
-  console.log('--------------');
+  console.log('-------COMMENTS SEEDED-------');
 
   process.exit(0);
 };
