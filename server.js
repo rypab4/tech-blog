@@ -48,7 +48,7 @@ app.set("view engine", "handlebars");
 
 //add middleware to the Express app that parses incoming requests with JSON payloads and adds the parsed data to the req.body property.
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 
 //make public static so don't have to write a long path
 app.use(express.static(path.join(__dirname, "public")));

@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "node seeds/seed.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node seeds/seed.js"
+    
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,6 @@
     "morgan": "^1.10.0",
     "mysql2": "^3.1.0",
     "nodemon": "^2.0.20",
-    "sequelize": "^6.28.0"
+    "sequelize": "^6.29.3"
   }
 }
