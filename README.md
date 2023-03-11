@@ -23,11 +23,11 @@ Tech blog site that allows users to publish articles, blog posts, and edit them 
 ## Links
 
 GitHub URL:  https://github.com/rypab4/employee-tracker
-Walkthrough Video: https://drive.google.com/file/d/1S7ZzhdFIhk9MOCBPdhmCM2ZQ_Y7Jb9x-/view 
+Heroku: https://thetechnologyblog031023.herokuapp.com/
 
 ## Installations 
 
-To install necessary dependencies, run the following command:
+To install necessary dependencies, run the following command if running from github and on local:
 
 ```
 npm install
@@ -50,19 +50,26 @@ mysql
 
 ## Usage
 This tool is to connect tech writers and give them a platform to allow them to discuss anything and everything tech.
-1.  Git clone https://github.com/rypab4/tech-blog
-    Heroku: 
+1. Go to website https://thetechnologyblog031023.herokuapp.com/ .  It may be a blank page if there are no blog posts
 
 
-2.  You can choose from the menu and enter according to the instructions
+2. Click on Login. 
 
-![alt text](./assets/img/Menu.png)
+![alt text](./public/imgs/Tech_Blog.png)
 
-3.  Tables will look like this:
+3.  Click on Sign Up. Enter username and password
 
-![alt text](./assets/img/tables.png)
+![alt text](./public/imgs/Sign_Up.png)
 
+4.  Once you click on the button Sign Up, you will be brought to your Dashboard.  Here you create a new post or can see your posts and you can edit them. The post will contain your name and the post date
+![alt text](./public/imgs/Dashboard.png)
+![alt text](./public/imgs/NewPost.png)
 
+5. To Edit your post click on the title of your post.  Click Update Post when done.
+![alt text](./public/imgs/EditPost.png)
+
+6. Go to Home and click on a title to make comments on a post.  Making comments can only be made on homepage.
+![alt text](./public/imgs/Comment.png)
 
 ## License
     

@@ -12,5 +12,10 @@ async function logout() {
         alert(response.statusText);
     }
 }
-
 document.querySelector('#logout-link').addEventListener('click', logout);
+
+$(document).ready(function() {
+    $('.navbar-toggler').click(function() {
+      $('.navbar-collapse').toggleClass('show');
+    });
+  });
