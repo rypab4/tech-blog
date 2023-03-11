@@ -1,28 +1,19 @@
-const path = require("path");
-const express = require("express");
-const session = require("express-session");
-const exphbs = require("express-handlebars");
+const path = require('path');
+const express = require('express');
+const session = require('express-session');
+const exphbs = require('express-handlebars');
+const routes = require('./controllers');
 
-const app = express();
-const port = process.env.PORT || 3001;
 
+// Create a new sequelize store using the express-session package
 const sequelize = require("./config/connection");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-//cookie
-const sess = {
-    secret: "Super secret secret",
-    cookie: {},
-    resave: false,
-    saveUninitialized: true,
-    store: new SequelizeStore({
-        db: sequelize
-    })
-};
-//express function to use cookie
-app.use(session(sess));
+//use app to call express
+const app = express();
+const port = process.env.PORT || 3001;
 
-//this is for the date function to be used in handlebars for posts
+//handlebar setup
 const hbs = exphbs.create({
     helpers: {
         format_date: date => {
@@ -30,18 +21,42 @@ const hbs = exphbs.create({
         }
     }
 });
+
+//cookie
+const sess = {
+    secret: 'Super secret secret',
+    cookie: {
+      maxAge: 300000,
+      httpOnly: true,
+      secure: false,
+      sameSite: 'strict',
+    },
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+      db: sequelize
+    })
+  };
+  
+//express function to use cookie
+app.use(session(sess));
+
+//this is for the date function to be used in handlebars for posts
 // sets the handlebars engine for rendering views
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
+
 //add middleware to the Express app that parses incoming requests with JSON payloads and adds the parsed data to the req.body property.
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
 //make public static so don't have to write a long path
 app.use(express.static(path.join(__dirname, "public")));
-//got to controllers tie in
-app.use(require('./controllers/'));
+
+//be able to use routes
+app.use(routes);
+
 //port to use
-app.listen(port, () => {
-    console.log(`App listening on port ${port}!`);
-    sequelize.sync({ force: false });
-});
+sequelize.sync({ force: false }).then(() => {
+    app.listen(port, () => console.log('Now listening'));
+  });
