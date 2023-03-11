@@ -14,7 +14,11 @@ Post.init(
         },
         title: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                //  password must be at least four characters
+                len: [4]
+            }
         },
         post_content: {
             type: DataTypes.TEXT,
@@ -30,10 +34,10 @@ Post.init(
         }
     },
     {
-        
-       //link to database connection
+
+        //link to database connection
         sequelize,
-         //Set table name to true and underscore on two word columns
+        //Set table name to true and underscore on two word columns
         freezeTableName: true,
         underscored: true,
         modelName: 'post'
