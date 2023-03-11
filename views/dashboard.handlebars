@@ -1,20 +1,20 @@
-<h1>Your Dashboard</h1>
+<h1 class="mb-4">Your Dashboard</h1>
 {{#if posts.length }}
 <section>
-    <div class=" container dashboard-card">
+    <div class="container dashboard-card">
         {{#each posts}}
-        <li class="mt-2 card body row border custom-card">
-            <article class="col-10">
+        <li class="mt-2 card-body row border custom-card">
+            <article class="col-md-10 col-sm-12">
                 <div id="blog-header" class="row">
-                    <div id="blog-title" class="col-5">
+                    <div id="blog-title" class="col-md-5 col-sm-6">
                         <a href="/dashboard/edit/{{id}}">{{title}}</a>
                     </div>
-                    <div class="col-5">
+                    <div class="col-md-5 col-sm-6">
                         <span>Posted by {{user.username}} on {{format_date created_at}}</span>
                     </div>
                 </div>
                 <div id="blog-content" class="row">
-                    <div class="col-10">
+                    <div class="col-md-10 col-sm-12">
                         <p>{{post_content}}</p>
                     </div>
                 </div>
@@ -24,13 +24,13 @@
     </div>
 </section>
 <div id="post-btn-div" class="row">
-    <div class="col-5">
+    <div class="col-md-5 col-sm-12">
         <a href="/dashboard/newpost"><button type="button" id="post-btn" class="btn btn-sm btn-primary mt-2">New Post</button></a>
     </div>
 </div>
 {{else}}
 <div id='post-btn-div' class="row">
-    <div class="col-1">
+    <div class="col-md-1 col-sm-12">
         <a href="/dashboard/newpost"><button type="button" id="post-btn" class="btn btn-sm btn-primary mt-2">New Post</button></a>
     </div>
 </div>
