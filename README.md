@@ -8,7 +8,7 @@ Tech blog site that allows users to publish articles, blog posts, and edit them 
 ## Table of Contents
 * [Links](#links)
 
-* [Installation](#installation)
+* [Installation](#installations)
 
 * [Usage](#usage)
 
@@ -22,8 +22,8 @@ Tech blog site that allows users to publish articles, blog posts, and edit them 
 
 ## Links
 
-GitHub URL:  https://github.com/rypab4/employee-tracker
-Heroku: https://thetechnologyblog031023.herokuapp.com/
+* GitHub URL:  https://github.com/rypab4/tech-blog
+* Heroku: https://thetechnologyblog031023.herokuapp.com/
 
 ## Installations 
 
@@ -81,9 +81,12 @@ none
 * JS
 * Bootstrap
 * Node.js
-* Jest
+* Sequelize
+* Express
 * Inquirer
 * fs
+* Session
+* Handlebars
 
 
 
